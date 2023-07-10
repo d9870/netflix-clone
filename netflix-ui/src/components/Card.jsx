@@ -14,7 +14,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import { deleteLikedMovie } from "../store";
 import { useDispatch } from "react-redux";
 
-export default React.memo(function Card({ movieData, isLiked = false }) {
+export default React.memo(function Card({
+  movieData,
+  isLiked = false,
+  onDelete,
+}) {
   const [isHovered, setIsHovered] = useState(false);
   const [email, setEmail] = useState(undefined);
   const navigate = useNavigate();
